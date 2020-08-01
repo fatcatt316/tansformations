@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Tansformations Payroll</title>
+  </head>
+  <body>
+    <h1>Tansformations Payroll</h1>
+
+    <h2>Gotta Spend Money to Make Money</h2>
+
+    <h3>They are paid this much</h3>
+    <ul>
+      <li>Per Tan: $<%= PAY_PER_TAN %></li>
+      <li>per Express Tan: $<%= PAY_PER_EXPRESS_TAN %></li>
+    </ul>
+
+    <h3>What did they do this week?</h3>
+
+    <form method="post">
+      <div>
+        <label for="tan_count">Number of Normal Tans:</label>
+        <input type="text" name="tan_count" value="<%= params['tan_count'] %>">
+      </div>
+      <div>
+        <label for="express_tan_count">Number of Express Tans:</label>
+        <input type="text" name="express_tan_count" value="<%= params['express_tan_count'] %>" >
+      </div>
+      <div>
+        <label for="travel_fee">Travel Fees:</label>
+        <input type="text" name="travel_fee" value="<%= params['travel_fee'] %>">
+      </div>
+      <div>
+        <label for="tips">Tips:</label>
+        <input type="text" name="tips" value="<%= params['tips'] %>">
+      </div>
+      <input type="submit" value="¡Calculate!">
+    </form>
+
+    <% if @total_pay %>
+      <div>
+        Total Pay: $<%= @total_pay %>
+      </div>
+    <% end %>
+  </body>
+</html>
