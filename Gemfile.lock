@@ -29,7 +29,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  pry
+  pry (~> 0.13)
   sinatra (~> 2.0.8)
   thin (~> 1.7.2)
 
