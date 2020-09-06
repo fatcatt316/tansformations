@@ -8,10 +8,12 @@ get '/' do
 end
 
 def calculate_pay(params)
-  (params['tan_count'].to_i * PAY_PER_TAN) +
-  (params['express_tan_count'].to_i * PAY_PER_EXPRESS_TAN) +
-  params['travel_fee'].to_i +
-  params['tips'].to_f
+  [
+    (params['tan_count'].to_i * PAY_PER_TAN),
+    (params['express_tan_count'].to_i * PAY_PER_EXPRESS_TAN),
+    params['travel_fee'].to_f,
+    params['tips'].to_f
+  ].sum
 end
 
 post '/' do
